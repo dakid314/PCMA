@@ -1,0 +1,9 @@
+# vscode
+.vscode
+
+# nodejs
+node_modules
+tmp
+dist
+
+src/assets/data

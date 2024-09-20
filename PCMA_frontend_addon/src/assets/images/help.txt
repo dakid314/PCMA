@@ -1,0 +1,278 @@
+1 安装说明
+1.1 环境配置
+（1）操作系统：Ubuntu 22.04以上
+（2）运行环境：
+pip 24.0；Python 3.11；R 4.4.0 numpy 1.23.5；pandas 2.0.3；scikit-learn 1.5.0；scipy 1.10.1；statsmodels 0.14.2；joblib 1.4.2；kaleido 0.2.1；jinja2 3.1.3；weasyprint 62.2；pdf2image 1.17.0；plotly 5.22.0；PyPDF2 3.0.1
+1.2 安装说明
+用户只需安装Python 3.11、R 4.40，在下载本软件后在命令行进入软件所在文件夹，使用pip命令安装本软件。
+pip install .
+随后本软件会自动安装所需依赖包。因此，第一次安装时间会较长，请用户耐心等待。
+
+2 使用说明
+2.1 输入数据
+2.1.1 必需输入
+用户至少需准备三个输入文件，必须为逗号分隔符(.csv)格式文件。分别为细菌相对丰度矩阵、代谢物浓度矩阵、疾病表型矩阵。其格式为
+（1）细菌相对丰度矩阵：第一列为患者编号，第一行为细菌名称
+ 
+（2）代谢物浓度矩阵：第一列为患者编号，第一行为代谢物名称。代谢物默认为未经标准化的浓度，如果已经经过标准化，须在参数中指定不进行标准化（见后文）
+ 
+（3）疾病表型矩阵：两列，第一列为患者编号，第二列疾病表型二分类变量（0-1变量），用户须提前将疾病表型（例如Control、Disease）转换为二分类变量。推荐将参照组设置为为0，疾病组设置为1。第一行须为表头。
+ 
+注意：前述三个文件第一列（即患者编号）必须相同。
+2.2.2 可选输入
+如果用户希望进行功能分析，须提供功能注释文件。功能注释文件必须为逗号分隔符文件(.csv)，格式为：共两列，第一列为代谢物，第二列为其功能注释。第一行为表头。如下所示
+ 
+2.2 运行步骤
+本软件有3个不同的模式（提供三个不同的python函数），在安装pcma包后，通过运行不同的函数进行分析。
+2.2.1 pcma1
+在python中输入以下命令导入pcma1函数
+from pcma.pcma1 import pcma1
+pcma1模式须指定分析的细菌，可以分析一个，也可以分析多个
+designated_bacteria_name = [ 
+    'Rothia_mucilaginosa', 'Bifidobacterium_catenulatum', 
+    'Akkermansia_muciniphila', 'Alistipes_indistinctus' 
+]
+调用pcma1函数以运行该功能
+pcma1(designated_bacteria_name=designated_bacteria_name, 
+      output_dir='/home/huai/Project/PCMA/Data/pcma1', 
+      Bacteria_dir='/home/huai/Project/PCMA/Data/test/Bacteria.csv', 
+      Metabolite_dir='/home/huai/Project/PCMA/Data/test/Metabolite.csv', 
+      Diagnosis_dir='/home/huai/Project/PCMA/Data/test/Diagnosis.csv')
+其中，output_dir是用户指定的输出文件夹，程序会在该输出文件夹下生成一个名为result的文件夹，所有结果将生成在result中
+Bacteria_dir、Metabolite_dir、Metabolite_dir分别是细菌相对丰度矩阵，代谢物浓度矩阵，疾病表型矩阵。
+注意：输入文件地址须为文件的绝对路径。
+等待程序运行完毕即可。
+如果用户希望进行功能分析，须指定参数is_func_anal为True（默认为False即不进行功能分析），并提供功能分析注释文件（格式见2.2.2可选输入部分）即：
+pcma1(designated_bacteria_name=designated_bacteria_name, 
+      output_dir='/home/huai/Project/PCMA/Data/pcma1', 
+      Bacteria_dir='/home/huai/Project/PCMA/Data/test/Bacteria.csv', 
+      Metabolite_dir='/home/huai/Project/PCMA/Data/test/Metabolite.csv', 
+      Diagnosis_dir='/home/huai/Project/PCMA/Data/test/Diagnosis.csv', 
+      is_func_anal=True, 
+      func_anal_file='/home/huai/Project/PCMA/Data/test/label_test.csv')
+
+2.2.2 pcma2
+在python中输入以下命令导入pcma2函数
+from pcma.pcma2 import pcma2
+pcma2无需指定分析细菌，其分析所有细菌。若无需进行功能分析，运行方式为
+pcma2(output_dir='/home/huai/Project/PCMA/Data/pcma2', 
+      Bacteria_dir='/home/huai/Project/PCMA/Data/test/Bacteria.csv', 
+      Metabolite_dir='/home/huai/Project/PCMA/Data/test/Metabolite.csv', 
+      Diagnosis_dir='/home/huai/Project/PCMA/Data/test/Diagnosis.csv')
+参数含义与pcma1函数同名参数相同，等待程序运行完毕即可。
+若需要进行功能分析，类似于pcma1函数，须指定参数is_func_anal为True（默认为False即不进行功能分析），并提供功能分析注释文件（格式见2.2.2可选输入部分）
+pcma2(output_dir='/home/huai/Project/PCMA/Data/pcma2', 
+      Bacteria_dir='/home/huai/Project/PCMA/Data/test/Bacteria.csv', 
+      Metabolite_dir='/home/huai/Project/PCMA/Data/test/Metabolite.csv', 
+      Diagnosis_dir='/home/huai/Project/PCMA/Data/test/Diagnosis.csv', 
+      is_func_anal=True, 
+      func_anal_file='/home/huai/Project/PCMA/Data/test/label_test.csv')
+
+2.2.3 pcpcma
+在python中输入以下命令导入pcpcma函数
+from pcma.pcpcma import pcpcma
+pcpcma无需指定分析细菌，其将细菌亦做PCA分析。若无需进行功能分析，运行方式为
+pcpcma(output_dir='/home/huai/Project/PCMA/Data/pcpcma', 
+       Bacteria_dir='/home/huai/Project/PCMA/Data/test/Bacteria.csv', 
+       Metabolite_dir='/home/huai/Project/PCMA/Data/test/Metabolite.csv', 
+       Diagnosis_dir='/home/huai/Project/PCMA/Data/test/Diagnosis.csv')
+参数含义与pcma1函数同名参数相同，等待程序运行完毕即可。
+若需要进行功能分析，类似于pcma1函数，须指定参数is_func_anal为True（默认为False即不进行功能分析），并提供功能分析注释文件（格式见2.2.2可选输入部分）
+pcpcma(output_dir='/home/huai/Project/PCMA/Data/pcpcma', 
+       Bacteria_dir='/home/huai/Project/PCMA/Data/test/Bacteria.csv', 
+       Metabolite_dir='/home/huai/Project/PCMA/Data/test/Metabolite.csv', 
+       Diagnosis_dir='/home/huai/Project/PCMA/Data/test/Diagnosis.csv', 
+       is_func_anal=True, 
+       func_anal_file='/home/huai/Project/PCMA/Data/test/label_test.csv')
+
+2.3 参数设定
+本软件提供了参数定制选项。如果不输入则使用默认参数。除了前述output_dir、Bacteria_dir、Metabolite_dir、Metabolite_dir、is_func_anal、func_anal_file，三种模式其他的参数如下：
+2.3.1 pcma1和pcma2
+ SCC_threshold_Bacteria_Metabolite：数值型参数。细菌和代谢物的SCC(Spearman Correlation Coefficient，下同)对细菌和代谢物的筛选阈值（如果是pcma1则不对细菌进行筛选），默认为0.2
+ SCC_threshold_Metabolite_Diagnosis=0.2：数值型参数。代谢物和疾病表型的SCC对细菌和代谢物的筛选阈值（如果是pcma1则不对细菌进行筛选），默认为0.2
+ p_threshold_Bacteria_Metabolite=0.05：数值型参数。细菌和代谢物Spearman相关分析对细菌和代谢物的p值或者FDR阈值（如果是pcma1则不对细菌进行筛选），默认为0.05
+ p_threshold_Metabolite_Diagnosis=0.05：数值型参数。代谢物和疾病表型Spearman相关分析对细菌和代谢物的p值或者FDR阈值（如果是pcma1则不对细菌进行筛选），默认为0.05
+ p_filter_method_Bacteria_Metabolite='p'：字符串型变量。指定使用p值还是FDR对细菌-代谢物Spearman相关分析筛选（如果是pcma1则不对细菌进行筛选），默认为p，可指定为fdr
+ p_filter_method_Metabolite_Diagnosis='p'：字符串型变量。指定使用p值还是FDR对代谢物-表型Spearman相关分析筛选（如果是pcma1则不对细菌进行筛选），默认为p，可指定为fdr
+ meta_PC_num：数值型变量或字符串型变量。指定代谢物的PC数量，若代谢物数量不少该参数使用该参数，否则代谢物的数量。亦可以指定为'mle'即用极大似然法自动估计PC数量。默认为50
+ meta_PC_norm_method：字符串型变量。代谢物标准化方法，若参数 meta_Norm是True就进行标准化。默认为MinMaxScaler（极大极小归一化）。除此之外亦可指定为StandardScaler()（Z-score变换）、MeanNormalization（均值标准化）、Centralization（中心化）
+ meta_if_whiten：布尔值型变量。指定代谢物PCA是否进行白化，默认为True
+ meta_Norm：布尔值型变量。指定是代谢物否进行标准化，默认为True
+ meta_seeds：整数型变量，指定代谢物PCA随机种子，默认为0
+ n_bootstrap=1000：整数型变量，指定中介分析bootstrap轮次，默认为1000
+
+2.3.2 pcpcma
+SCC_threshold_Metabolite_Diagnosis：同pcma1和pcma2的同名变量
+SCC_threshold_Bacteria_Diagnosis：同pcma1和pcma2的同名变量
+p_threshold_Metabolite_Diagnosis：同pcma1和pcma2的同名变量
+p_threshold_Bacteria_Diagnosis：同pcma1和pcma2的同名变量
+p_filter_method_Metabolite_Diagnosis：同pcma1和pcma2的同名变量
+p_filter_method_Bacteria_Diagnosis：同pcma1和pcma2的同名变量
+meta_PC_num=50：同pcma1和pcma2的同名变量
+meta_PC_norm_method：同pcma1和pcma2的同名变量
+meta_if_whiten：同pcma1和pcma2的同名变量
+meta_Norm：同pcma1和pcma2的同名变量
+meta_seeds：同pcma1和pcma2的同名变量
+bact_PC_num：数值型变量或字符串型变量。指定细菌的PC数量，若细菌数量不少该参数使用该参数，否则细菌的数量。亦可以指定为'mle'即用极大似然法自动估计PC数量。默认为50
+bact_norm_method：字符串型变量。细菌标准化方法，若bact_Norm为True就标准化。默认为MinMaxScaler（极大极小归一化）。除此之外亦可指定为StandardScaler()（Z-score变换）、MeanNormalization（均值标准化）、Centralization（中心化）
+bact_if_whiten：布尔值型变量。指定细菌是否进行白化，默认为True
+bact_Norm：布尔值型变量。指定细菌是否进行标准化，默认为False，即不进行
+bact_seeds：整数型变量，指定细菌PCA随机种子，默认为True
+n_bootstrap：同pcma1和pcma2的同名变量
+
+2.4 输出文件说明
+输出文件地址由用户输入的output_dir定义，如前所述，程序会在该输出文件夹下生成一个名为result的文件夹，所有结果将生成在result中。result文件夹将下一级为data和plot文件夹。data为pcma分析过程中产生的所有数据，均为csv格式。其中paramters_list.csv文件包括了所有输入的参数。plot则包括了所有生成的图片。图片由矢量pdf和600DPI的同名png图片组成两种格式，包括热图、火山图、箱线图等。除此之外，result文件夹下将自动生成一个PDF报告，该报告对data和plot文件夹内容进行了解释说明，在此不在重复。下图为报告的部分节选。
+ 
+2.5 其他功能
+除主程序外，本软件其他子程序部分亦可提供给用户单独调用。
+correlation 
+调用:
+from pcma.correlation import compute_correlation 
+compute_correlation(df1: pd.DataFrame, 
+                        df2: pd.DataFrame, 
+                        threshold=0.2, 
+                        p_threshold=0.05, 
+                        filter_method='p')
+解释：
+（1）功能：用于两个表达矩阵（例如细菌-代谢物）的相关性比较
+（2）输入：两个pandas矩阵。二者第一列为患者名，第二列之后为各自元素（或者疾病分型，要求2.1.1 必需输入）
+（3）参数：threshold为SCC筛选阈值。p_threshold为Spearman相关分析阈值。filter_method可指定p值还是fdr分析（fdr输入'fdr'）即可
+（4）输出：全部相关性分析结果和符合阈值的筛选结果
+pca_analysis
+调用：
+from pcma.pca_analysis import run_pca 
+run_pca(get_bact_meta: pd.DataFrame, 
+           PC_num=50, 
+           norm_method='MinMaxScaler', 
+           if_whiten=True, 
+           Norm=True, 
+           seeds=0):
+解释：
+（1）功能：PCA分析
+（2）输入：get_bact_meta：pandas矩阵，细菌或者代谢物相对丰度或者浓度矩阵
+（3）参数：
+PC_num：数值型变量或字符串型变量。指定PC数量，若分析矩阵列数数量不少该参数使用该参数，否则矩阵列数。亦可以指定为'mle'即用极大似然法自动估计PC数量。默认为50
+bact_norm_method：字符串型变量。标准化方法，若bact_Norm为True就标准化。默认为MinMaxScaler（极大极小归一化）。除此之外亦可指定为StandardScaler()（Z-score变换）、MeanNormalization（均值标准化）、Centralization（中心化）
+bact_if_whiten：布尔值型变量。指定是否进行白化，默认为True
+bact_Norm：布尔值型变量。指定是否进行标准化，默认为False，即不进行
+bact_seeds：整数型变量，指定PCA随机种子，默认为True
+（4）输出：标准化数据, pca矩阵 解释方差比率矩阵, 组成矩阵
+mediation_pcma1
+调用：
+from pcma.mediation_pcma1 import mediation_pcma1 
+mediation_pcma1(designated_bact_name: list, 
+                    Bacteria_designated: pd.DataFrame, 
+                    meta_pca_df: pd.DataFrame, 
+                    Sample_Name: pd.Series, 
+                    Diagnosis: pd.Series, 
+                    n_bootstrap=1000)
+解释
+（1）功能：提供PCMA1的中介分析，即指定细菌名
+（2）输入：designated_bact_name为指定细菌名。Bacteria_designated为指定细菌对应的表达矩阵。meta_pca_df为代谢物pca分析矩阵。Sample_Name为样本名。Diagnosis为疾病分型矩阵，
+（3）参数：n_bootstrap为bootstrap分析轮次。
+（4）输出：PCMA1显著通路（细菌-代谢物PC）以及对应PC系数。
+mediation_pcma2
+调用：
+from pcma.mediation_pcma2 import mediation_pcma2 
+mediation_pcma2(Bacteria: pd.DataFrame, 
+                    meta_pca_df: pd.DataFrame, 
+                    Sample_Name: pd.Series, 
+                    Diagnosis: pd.Series, 
+                    n_bootstrap=1000)
+解释
+（1）功能：提供PCMA2的中介分析，即全部细菌
+（2）输入和参数：Bacteria为细菌相对丰度矩阵。其他同mediation_pcma1
+（3）输出：PCMA2显著通路（细菌-代谢物PC）以及对应PC系数。
+mediation_pcpcma
+调用：
+from pcma.mediation_pcpcma import mediation_PCPCMA 
+mediation_PCPCMA(meta_pca_df: pd.DataFrame, 
+                     bact_pca_df: pd.DataFrame, 
+                     Sample_Name: pd.Series, 
+                     Diagnoisis: pd.Series, 
+                     n_bootstrap=1000):
+解释
+（1）功能：提供PCPCMA的中介分析，即细菌PC-代谢物PC
+（2）输入和参数：meta_pca_df为meta_pca_df为代谢物pca分析矩阵，bact_pca_df为细菌pca分析矩阵，其他同mediation_pcma1
+（3）输出：PCMA2显著通路（细菌-代谢物PC）以及对应PC系数。
+volcano
+调用：
+from pcma.volcano import volcano 
+volcano(resource_data, 
+            plot_dir, 
+            y_value="p", 
+            y_threshold=0.05, 
+            SCC_threshold=0.2)
+解释：
+（1）功能：根据相关分析结果绘制火山图，观察SCC和P值的关系
+（2）输入和参数：resource_data由pcma.correlation 返回的相关分析结果。plot_dir指定输出的文件地址。y_value指定是p值还是fdr，y_threshold指定p值阈值，SCC_threshold指定相关系数阈值。
+（3）输出：火山图。
+heatmap_scale
+调用
+from pcma.heatmap_scale import heatmap_scale 
+heatmap_scale(Metabolite_dir, scale_data, plot_dir_1, plot_dir_2)
+解释：
+（1）功能：为代谢物矩阵标准化前后绘制热图
+（2）输入和参数：Metabolite_dir为代谢物原始浓度地址，scale_data为代谢物标准化浓度后地址，plot_dir_1,和plot_dir_2为其图片输出地址
+（3）输出：热图
+heatmap_pc
+调用：
+from pcma.heatmap_scale import heatmap_scale 
+result = heatmap_pc(result, file_dir, plot_dir, method='pcpcma')
+解释：
+（1）功能：通路可视化--热图
+（2）输入和参数：result为通路文件，可参考result/data/Siginficant_PC.csv，file_dir为文件输出地址，plot_dir为其图片输出地址，method为模式，可选pcma1 pcma2 pcpcma
+（3）输出：热图和中间文件（heatmap_data.csv）。
+sankey
+调用：
+from pcma.sankey import sankey 
+sankey(Bacteria_dir, Metabolite_pca_dir, Diag_dir, Sig_dir, 
+           output_data_dir, output_png_dir)
+解释：
+（1）功能：通路可视化--桑基图
+（2）输入和参数：Bacteria_dir是细菌相对丰度矩阵文件，Metabolite_pca_dir是代谢物pca文件，Diag_dir疾病分型矩阵。Sig_dir为通路文件，可参考result/data/Siginficant_PC.csv。output_data_dir, output_png_dir分别是数据和图片的输出路径
+（3）输出：桑基图和中间数据（sankey_data_dir.csv）
+boxplot
+调用：
+from pcma.boxplot import boxplot_1 
+from pcma.boxplot import boxplot_2 
+boxplot_1(file_dir, 
+              Bacteria_dir, 
+              Metabolite_dir, 
+              Diagnosis_dir, 
+              output_dir, 
+              designate_pathway_num=3) 
+boxplot_2(file_dir, 
+              Bacteria_dir, 
+              Metabolite_dir, 
+              Diagnosis_dir, 
+              output_dir, 
+              designate_pathway_num=3)
+解释：
+（1）功能：根据前述结果绘制比较的箱型图.
+（2）输入和参数：file_dir是result/data文件，Bacteria_dir，Metabolite_dir和Diagnosis_dir是2.1.1输入的三个文件。分别是细菌相对丰度矩阵、代谢物浓度矩阵、疾病分型矩阵。designate_pathway_num是指定分析的通路数量。boxplot_1为pcma1和pcma2使用，boxplot_2为pcpcma使用
+（3）输出：箱型图
+metabolite_analysis
+输入：
+from pcma.metabolite_analysis import metabolite_analysis 
+metabolite_analysis(components_file_path, 
+                        label_file_path, 
+                        significant_pc_path, 
+                        fig_output, 
+                        file_output, 
+                        pathway_num=3, 
+                        alpha=0.05, 
+                        label_column_index=1, 
+                        coff_left=0.5):
+（1）功能：功能富集分析：对代谢物数据PCA处理后，各代谢物主成分由原代谢物线性组成。由于代谢物数量庞大，系数均匀，因此很难具体观察某一主成分由那些或哪类代谢物主导。通过给各个代谢物进行功能注释。
+（2）输入：components_file_path：pca成分文件，可参考result/data/Metabolite_pca_components.csv。label_file_path为2.2.2 可选输入所定义的文件。significant_pc_path为显著PC文件，可参考result/data/Siginficant_PC.csv。fig_output和file_output是图片和文件输出。
+（3）参数：pathway_num是分析的参数数量。alpha是显著性水平。label_column_index指定哪一列是注释（如果按2.2.2 可选输入输入文件，此参数默认即可），coff_left是对主成分内的代谢物正、负系数进行加和，加和得到的最终占比
+（4）输出：一个PDF，是功能富集的堆叠箱型图。两个csv文件：附件一展示了相应显著通路当中，代谢物主成分被富集的代谢物功能类型。附件二展示了所有主成分中，所有功能类型的代谢物富集结果（Fisher精确检验）
+3 注意事项
+运行pcma时有可能会有报错如下：
+ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals 
+  warnings.warn("Maximum Likelihood optimization failed to ") 
+RuntimeWarning: overflow encountered in exp 
+  return 1/(1+np.exp(-X))
+这一报错是因为在sigmoid函数中，由于exp函数是一个指数函数，当输入的数值过大或过小，就会出现数据溢出。
+当前认为其不影响分析。

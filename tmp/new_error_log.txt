@@ -1,0 +1,3 @@
+Error occurred at index 3142: GCA_014204915.1
+Error occurred at index 4135: GCA_026341745.1
+Error occurred at index 4401: GCA_004116955.1

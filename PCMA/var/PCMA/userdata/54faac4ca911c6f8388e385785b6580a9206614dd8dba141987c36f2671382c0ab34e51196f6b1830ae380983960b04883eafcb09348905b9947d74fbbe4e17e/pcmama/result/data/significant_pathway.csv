@@ -1,0 +1,18 @@
+,PC,Label,p_value
+13,PC1,negative_1-acyl-sn-glycero-3-phosphocholines,0.04048674008946397
+94,PC1,positive_Amphetamines and derivatives,0.004430749187467568
+172,PC1,positive_Brassinolides and derivatives,0.032196625120329635
+196,PC1,positive_Cholesterols and derivatives,0.02086687783893218
+198,PC1,positive_Cholesteryl esters,0.047646506601134876
+272,PC1,positive_Ergosterols and derivatives,0.030840609095470994
+533,PC1,negative_Phenols,0.04024663269234201
+639,PC1,negative_Sphingolipids,1.4070531116350585e-07
+737,PC1,negative_Very long-chain fatty acids,0.005423847762489756
+3945,PC14,negative_Beta-diketones,0.020006866508868702
+4023,PC14,negative_Dipeptides,0.04627538650872624
+4284,PC14,positive_Other hydroxyeicosapolyenoic acids,0.012134613805872939
+4419,PC14,negative_Sphingolipids,0.015131341190691011
+4516,PC14,positive_Very long-chain fatty acids,0.040385528613170664
+23827,PC38,negative_Isoflavonoids,0.04750282458579542
+24064,PC38,positive_Secondary alcohols,0.02053748956799515
+24118,PC38,"positive_Tetrahydroxy bile acids, alcohols and derivatives",0.02276219820440227

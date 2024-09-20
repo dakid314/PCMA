@@ -1,0 +1,27 @@
+,PC,Label,p_value
+13,PC1,negative_1-acyl-sn-glycero-3-phosphocholines,0.04848359670983902
+86,PC1,positive_Amphetamines and derivatives,0.03454509690622612
+152,PC1,positive_Brassinolides and derivatives,0.04104900053793158
+176,PC1,positive_Cholesterols and derivatives,0.04416599760086371
+246,PC1,positive_Ergosterols and derivatives,0.020135577159884455
+250,PC1,positive_Fatty acid esters,0.03937990959126017
+254,PC1,positive_Fatty acids and conjugates,0.030536717473862753
+467,PC1,negative_Phenols,0.029040715328223422
+561,PC1,negative_Sphingolipids,0.00013023375341404868
+632,PC1,positive_Triterpenoids,0.022682441439950764
+647,PC1,negative_Very long-chain fatty acids,0.010091937246466735
+14659,PC3,negative_1-(1Z-alkenyl)-glycero-3-phosphocholines,0.011737745342248458
+14665,PC3,negative_1-acyl-sn-glycero-3-phosphocholines,0.04848359670983902
+14667,PC3,negative_1-acyl-sn-glycero-3-phosphoethanolamines,0.029644712822106338
+14713,PC3,negative_Alkyl-phenylketones,0.021395651894988352
+14739,PC3,negative_Amphetamines and derivatives,2.8704582541037213e-05
+14767,PC3,negative_Benzenesulfonic acids and derivatives,0.014139985054682194
+14794,PC3,positive_Benzyl alcohols,0.014098760489183746
+15039,PC3,negative_Monoalkylglycerophosphocholines,0.043166982692328736
+15181,PC3,negative_Pyrroles,0.0449203831012398
+15213,PC3,negative_Sphingolipids,3.4175942918413424e-05
+15242,PC3,positive_Tetracyclines,0.031254640579529175
+15247,PC3,negative_Tetrahydroisoquinolines,0.008291467035243123
+15252,PC3,positive_Tetrapyrroles and derivatives,0.049988543649252995
+15284,PC3,positive_Triterpenoids,0.001266586408459489
+15285,PC3,negative_Triterpenoids,0.02956974464912839

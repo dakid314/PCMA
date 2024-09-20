@@ -1,0 +1,13 @@
+"","source","target","Spearman_Correlation"
+"1","Bifidobacterium_catenulatum","PC1_Bifidobacterium_catenulatum",0.141711456765493
+"2","PC1_Bifidobacterium_catenulatum","Disease Phenotype",-0.582501310719529
+"3","Bifidobacterium_catenulatum","PC2_Bifidobacterium_catenulatum",0.0922667642250234
+"4","PC2_Bifidobacterium_catenulatum","Disease Phenotype",0.214415192412644
+"5","Bifidobacterium_catenulatum","PC3_Bifidobacterium_catenulatum",-0.108503630852697
+"6","PC3_Bifidobacterium_catenulatum","Disease Phenotype",0.229299549109207
+"7","Akkermansia_muciniphila","PC1_Akkermansia_muciniphila",0.544883087278503
+"8","PC1_Akkermansia_muciniphila","Disease Phenotype",-0.582501310719529
+"9","Akkermansia_muciniphila","PC3_Akkermansia_muciniphila",-0.104616274193725
+"10","PC3_Akkermansia_muciniphila","Disease Phenotype",0.229299549109207
+"11","Alistipes_indistinctus","PC1_Alistipes_indistinctus",0.593906044907661
+"12","PC1_Alistipes_indistinctus","Disease Phenotype",-0.582501310719529

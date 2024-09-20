@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" href="assets/images/site/logo.png" title="Favicon">
+  <title>PCMA</title>
+  <style>
+    [data_store] {
+      display: none;
+    }
+    .form-container {
+            border: 2px solid #0B346E;
+            border-radius: 15px;
+            padding: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+    
+  </style>
+</head>
+
+<body>
+  <!-- <div class="preloader">
+        <span class="preloader-spin"></span>
+    </div> -->
+  <div class="site">
+
+    <header>
+      <div class="container" id="header-container">
+        <div class="row">
+          <div class="col-8 col-sm-3 logo-column">
+            <div style="position: relative;top:4px">
+              <a id="HCD-Lab"  class="text2">
+                HCD Lab
+              </a>
+            </div>
+          </div>
+          <div class="col-6 col-sm-9 nav-column clearfix">
+            <nav id="menu" class="d-none d-lg-block">
+              <ul>
+                <!-- <li class="current-menu-item">
+                  <a href="index.html">Home</a>
+                </li> -->
+                <!--            <li><a href="introduction.html">Introduction</a></li>
+                                <li><a href="modules.html">Modules</a></li>  -->
+                <li>
+                  <a href="predictor/index.html">PCMA</a>
+                </li>
+                <li>
+                  <a href="result/index.html">Result</a>
+                </li>
+                <li>
+                  <a href="download/index.html">Download</a>
+                </li>
+                <li>
+                  <a href="help.html">Help</a>
+                </li>
+                <!-- <li>
+                  <a href="radar_result/index.html">Research</a>
+                </li> -->
+                <!--            <li> <a href="help.html">Help</a></li>  -->
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+
+    <!--title-->
+
+    <!--content-->
+    <br>
+  </div>
+  <div class="service-area sp">
+    <div class="container">
+      <div id="main">
+        <h1 id="loadingpage" style="display: block; text-align: center;">Loading...</h1>
+      </div>
+      <hr />
+      <!-- <div>
+        <p>
+          <span style="font-weight: bolder;font-size: xx-large;">References:</span>
+        </p>
+        <p>Zhao Z, Hu Y, Hui X, Yang J, Luo L, Jiang Q, Cao X, Kong W,
+          </p>
+      </div> -->
+    </div>
+  </div>
+
+  <!--end-->
+  <footer>
+    <div class="end">
+      <div class="container">
+        <div>
+          <div>
+            <p class="text-center">
+              <br>
+              HCD Laboratory<br>
+              Shenzhen University Health Science Center<br>
+              Email:
+              <a href="mailto:wangyj@szu.edu.cn" class="text3">wangyj@szu.edu.cn</a><br>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6"></div>
+          <div class="col-lg-6 text-right">
+            <div class="footer-nav">
+              
+              <!-- <a href="http://www.szu-bioinf.org/T3Enc/index.html" target="_blank">T3Enc</a> -->
+              <a href="help.html">Help</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div data_store storetype="html" id="help_page">
+    <div class="about-content">
+      <p></p>
+      <h2>How to use the PCMA online application ? </h2>
+      <p></p>
+      <div style="margin-right: 16px; line-height: 1.5">
+        <div style="position:relative; margin-top: 24px;">Visit: <a href="predictor"><u>
+              <font size="3">/PCMA/predictor/</font>
+            </u></a></div>
+        <div class="about-img" style="position:relative; margin-top: 20px; margin-bottom: 20px;">
+          <img src="assets/images/Predictor.png" alt style="width: 1000px;"  >
+        </div>
+        <ul style="margin-right: 16px">
+          <li style="text-align:justify;color:black">
+            <strong style="font-size: larger; color: black;" >First : Choose Analysis model between four options. </strong></li>
+            <p></p>
+            <strong><p>PCMA analyzes the pathways of ‘single bacterial taxon - PC of multiple metabolites - disease’.</p>
+            <p>PCMA2 collects and performs PCA on all the metabolites correlated with the disease at one time, followed by MA on each ‘bacterial taxon - PC - disease’ pathway.</p>
+            <P>PCPCMA performs PCA on multiple bacterial taxa, before mediation analysis along the ‘PC of bacterial taxa - PC of metabolites - disease’ pathways.</P>
+            <p style="color: black;">Attention: the first column of the three files (record numbers of patients) must be same.</p></strong>
+          <br>
+          <li style="text-align:justify; color: black;">
+            <strong style="font-size: larger;">Upload the Bacteria_file, Metabolite_file and Diagnosis_file. </strong></li>
+            <p></p>
+            <strong><p>Bacteria relative abundance matrix (.csv table files):
+               Bacteria file contains bacteria relative abundance for multiple samples. The first column shows record numbers of patients. The first row reveals bacteria species.
+              </p>
+              <p>Metabolites concentration matrix (.csv table files):
+                Metabolite file contains metabolites concentrations for multiple samples. The first column shows record numbers of patients. The first row should be bacteria species. The concentrations data are unstandardized in default. Parameter should be specified to refuse standardization for standardized data.
+                </p>
+              <p>Disease phenotype matrix (.csv table files):
+                  Diagnosis file contains disease phenotypes for multiple samples. There are two columns including record numbers of patients and binary outcomes which stand for disease phenotypes or diagnoses (0 or 1 variable). Users must convert disease phenotypes, control group and disease group for instance, into binary variables. Suggest you set the control group to 0 and the disease group to 1. The first row should be header.
+                </p>
+              <p>Functional annotation table (.csv table files):
+                  Users should offer a functional annotation table in case the function analysis is expected. The label file must be a comma-separated values file including metabolomic feature in the first column and functional annotation in the second column, two columns in total. The first row should be header.
+                </p>
+              </strong>
+          <br>
+
+          <li style="text-align:justify;color: black;">
+            <strong style="font-size: larger;">Offer an email address when you submit your job so that you will be
+              informed once your job is finished.</strong>
+          </li><br>
+          <li style="text-align:justify;color: black;">
+            <strong style="font-size: larger;">An unique jobID will be generated once you submit your job
+              successfully. You can check your jobID via your email and get your results by using the ID in <a
+                href="result/">/PCMA/result</a>. </strong>
+          </li><br>
+          <li style="text-align:justify;color: black;">
+            <strong style="font-size: larger;">Standalone Version of PCMA is freely available at <a
+                href="download.html">/PCMA/download.html</a>.</strong>
+          </li><br>
+        </ul>
+      </div>
+      <!-- <a href="#" class="button">More about</a>  -->
+    </div>
+    <hr />
+    <div class="about-content">
+      <div style="text-align:justify; margin-right: 32px;">
+        <p></p>
+        <h2>How to explain the results you got from the PCMA website?</h2>
+        <p></p>
+      </div>
+      <!-- <h3>For xlsx format</h3> -->
+      <!-- <div class="about-img" style="position:relative; margin-top: 20px; margin-bottom: 30px;">
+        <img src="assets/images/result.png" alt="" style="max-height: 400px; display: inline-block">
+      </div> -->
+      <div style="margin-right: 32px; line-height: 1.5">
+        <ul>
+          <li style="text-align:justify; color: black;">
+            <strong><p style="font-size: larger;">The program will generate a folder named result, and all the results will appear in the folder. The result folder goes down to two folders named data and plot. </p></li>
+            <p>The folder data includes all data generated from PCMA analysis in .csv format. The paramters_list.csv file contains all the entered parameters. The folder plot contains all the generated images. The images are composed of vector pdf files and 600DPI png images of the same name, including heat map, volcano map, box plot, etc. In addition, a PDF report is automatically generated under the result folder, which explains the contents of the data and plot folder.</p>
+            </strong>
+            <!-- The <span style="color: rgb(235, 146, 161);">pink frame</span> is the sequence name based on the ID of the
+            sequence in the input fasta.  -->
+          <!-- </li> -->
+          
+            <!-- The column pointed by the <span style="color: blue;">blue arrow</span> is the final output score of
+            the ensemble model. -->
+            <div class="about-img" style="position:relative; margin-top: 20px; margin-bottom: 50px;">
+              <img src="assets/images/result_pdf.jpg" alt="" style="max-height: 400px; display: inline-block">
+            <p></p>
+            <p></p>
+          <li style="text-align:justify; color: black;">
+            <strong><p style="font-size: larger;">The program will generate a PDF report contains parameters table, volcano map, Sankey plot, box plot, etc., indicating significant features and PCs after PCMA analysis. </p></li>
+            <p>The volcano map reveals the selection criteria of mediator variable according to metabolite or other intermediate. The heatmaps visualizes the changes in mediator variable before and after normalization. The PCA Metabolite Heatmap reflects the principal components (PCs) derived from the mediator variable after PCA processing, where each PC is linearly composed of the original variables with certain coefficients. Sankey plot indicates correlation among bacteria, metabolites, and disease phenotypes in order. Boxplots are used to show significant Bacteria and corresponding PCs, as well as Metabolite and corresponding PCs.</p>
+            </strong>
+          <!-- </li> -->
+          <!-- <li style="text-align:justify;">
+            <span style="color: rgb(249, 166, 11);">Orange arrows</span> point to the results of predicting different types
+            of secreted proteins
+          </li> -->
+        </ul>
+      </div>
+      <!-- <div class="about-img" style="position:relative; margin-top: 20px; margin-bottom: 30px;">
+        <img src="assets/images/Predictor_Output_Web.jpg" alt="" style="max-height: 450px; display: inline-block">
+      </div>
+      <div style="margin-right: 32px; line-height: 1.5">
+        We also offer online table preview.
+      </div> -->
+
+      <!-- <a href="#" class="button">More about</a>  -->
+    </div>
+    <!-- <hr /> -->
+    <!-- <div class="about-area">
+      We recommend using the following thresholds to differentiate positive proteins: <span style="color: red;">1</span>
+      for T1 and T6, and <span style="color: red;">0.9</span> for T2
+    </div> -->
+  </div>
+  <div data_store storetype="html" id="download_page">
+    <a href="/PCMA/PCMA.zip" download>Download PCMA </a>
+  </div>
+  <div data_store storetype="html" id="predictor_page">
+    <div class="form-container"> 
+      <div style="margin-left: 40px;">
+        <div>
+          <p id = 'job-id'>
+            Job_ID:
+          </p>
+        </div>
+        <form id="uploadForm" action="api/file_submit" method="POST" enctype="multipart/form-data">
+          <p align="left">
+              <strong></strong>
+              <em>
+                  <font color="#0B346E">Upload a <strong></font>
+                  <font color="blue">Bacteria</font></strong>
+                  <font color="#0B346E">file:</font>
+              </em>
+              <input id="bacteriaFile" type="file" name="Bacteria" size="25">
+          </p>
+          <p align="left">
+              <strong></strong>
+              <em>
+                  <font color="#0B346E">Upload a <strong></font>
+                  <font color="blue">Metabolite</font></strong>
+                  <font color="#0B346E">file:</font>
+              </em>
+              <input id="metaboliteFile" type="file" name="Metabolite" size="25">
+          </p>
+          <p align="left">
+              <strong></strong>
+              <em>
+                  <font color="#0B346E">Upload a <strong></font>
+                  <font color="blue">Diagnosis</font></strong>
+                  <font color="#0B346E">file:</font>
+              </em>
+              <input id="diagnosisFile" type="file" name="Diagnosis" size="25">
+          </p>
+          <p> </p>
+          <p align="left">
+            <strong></strong>
+            <em>
+              <p>If you chooce Function Analysis model:</p>
+                <font color="#0B346E">Upload a <strong></font>
+                <font color="blue">Label</font></strong>
+                <font color="#0B346E">file:</font>
+            </em>
+            <input id="LabelFile" type="file" name="label" size="25">
+          </p>
+          <p align="left">
+            <strong></strong>
+          <div style="margin-left: 570px;margin-top: -290px;">
+            <em>
+              <p>If you chooce PCMA1:</p>
+                <font color="#0B346E">Upload a <strong></font>
+                <font color="blue">Bac</font></strong>
+                <font color="#0B346E">file:</font>
+            </em>
+            <input id="bac_File" type="file" name="bac_file" size="25">
+          </p>
+          <div id = 'opt'><label>
+            <input type="checkbox" value="1">
+            Option1:PCMA1
+            </label>
+            <label>
+              <input type="checkbox" value="2">
+              Option2:PCMA2
+            </label>
+            <label>
+              <input type="checkbox" value="3">
+              Option3:PCMAMA
+            </label>
+            <label>
+              <input type="checkbox" value="4">
+              Option4:Function Analysis
+            </label>
+          </div>
+          
+          <p align="left">
+            <button class="button-2" id='submit' style="background-color: #ede9e9; /* Green */
+            color: rgb(37, 35, 35);
+            padding: 0 18px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 3px 2px;
+            cursor: pointer;
+            border-radius: 10px;" >Submit</button> 
+          </p>
+        </form>
+        <p>
+          Please input your email:
+          <input id = 'email'>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+</html>

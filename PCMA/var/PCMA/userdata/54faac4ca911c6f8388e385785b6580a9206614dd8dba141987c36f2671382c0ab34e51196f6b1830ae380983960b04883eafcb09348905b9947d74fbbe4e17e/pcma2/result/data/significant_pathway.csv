@@ -1,0 +1,23 @@
+,PC,Label,p_value
+13,PC1,negative_1-acyl-sn-glycero-3-phosphocholines,0.04048674008946397
+94,PC1,positive_Amphetamines and derivatives,0.004430749187467568
+172,PC1,positive_Brassinolides and derivatives,0.032196625120329635
+196,PC1,positive_Cholesterols and derivatives,0.02086687783893218
+198,PC1,positive_Cholesteryl esters,0.047646506601134876
+272,PC1,positive_Ergosterols and derivatives,0.030840609095470994
+533,PC1,negative_Phenols,0.04024663269234201
+639,PC1,negative_Sphingolipids,1.4070531116350585e-07
+737,PC1,negative_Very long-chain fatty acids,0.005423847762489756
+16688,PC3,positive_Acylaminobenzoic acid and derivatives,0.044720926878515456
+16726,PC3,positive_Amphetamines and derivatives,0.004430749187467568
+16790,PC3,positive_Benzyl alcohols,0.0260286496900401
+16799,PC3,"negative_Bile acids, alcohols and derivatives",0.04187380176037605
+16828,PC3,positive_Cholesterols and derivatives,0.017776095556796174
+16988,PC3,positive_Harmala alkaloids,0.024404337974044964
+17236,PC3,positive_Pyrroles,0.040309437050605045
+17319,PC3,negative_Tetrapyrroles and derivatives,0.0027754237820501303
+17354,PC3,positive_Triterpenoids,0.019018877580479362
+33462,PC5,positive_Cholesteryl esters,0.04891059865791651
+33902,PC5,positive_Sphingolipids,2.917292895493181e-08
+33951,PC5,negative_Tetrapyrroles and derivatives,0.04436913613475723
+33987,PC5,negative_Triterpenoids,0.0019412119849843523

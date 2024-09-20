@@ -1,0 +1,123 @@
+"","source","target","Spearman_Correlation"
+"1","Coprococcus_catus","PC1_Coprococcus_catus",0.479409559665525
+"2","PC1_Coprococcus_catus","Disease Phenotype",-0.613476863844808
+"3","Coprococcus_catus","PC3_Coprococcus_catus",0.139158323602317
+"4","PC3_Coprococcus_catus","Disease Phenotype",0.285216456698996
+"5","Coprococcus_catus","PC5_Coprococcus_catus",0.0831848651450145
+"6","PC5_Coprococcus_catus","Disease Phenotype",0.297687133931251
+"7","Eubacterium_hallii","PC1_Eubacterium_hallii",0.426754720823486
+"8","PC1_Eubacterium_hallii","Disease Phenotype",-0.613476863844808
+"9","Eubacterium_hallii","PC5_Eubacterium_hallii",-0.19782613348813
+"10","PC5_Eubacterium_hallii","Disease Phenotype",0.297687133931251
+"11","Dorea_longicatena","PC1_Dorea_longicatena",0.364844549669602
+"12","PC1_Dorea_longicatena","Disease Phenotype",-0.613476863844808
+"13","Dorea_longicatena","PC5_Dorea_longicatena",-0.328818728898191
+"14","PC5_Dorea_longicatena","Disease Phenotype",0.297687133931251
+"15","Alistipes_putredinis","PC1_Alistipes_putredinis",0.493189322850587
+"16","PC1_Alistipes_putredinis","Disease Phenotype",-0.613476863844808
+"17","Alistipes_putredinis","PC2_Alistipes_putredinis",0.249262053058091
+"18","PC2_Alistipes_putredinis","Disease Phenotype",0.142809368304857
+"19","Roseburia_intestinalis","PC1_Roseburia_intestinalis",0.12143512761377
+"20","PC1_Roseburia_intestinalis","Disease Phenotype",-0.613476863844808
+"21","Roseburia_intestinalis","PC3_Roseburia_intestinalis",-0.0978069395847695
+"22","PC3_Roseburia_intestinalis","Disease Phenotype",0.285216456698996
+"23","Roseburia_intestinalis","PC5_Roseburia_intestinalis",-0.339629405063207
+"24","PC5_Roseburia_intestinalis","Disease Phenotype",0.297687133931251
+"25","Subdoligranulum_unclassified","PC1_Subdoligranulum_unclassified",0.646270323303102
+"26","PC1_Subdoligranulum_unclassified","Disease Phenotype",-0.613476863844808
+"27","Subdoligranulum_unclassified","PC3_Subdoligranulum_unclassified",0.135036420180078
+"28","PC3_Subdoligranulum_unclassified","Disease Phenotype",0.285216456698996
+"29","Subdoligranulum_unclassified","PC10_Subdoligranulum_unclassified",-0.133554567655691
+"30","PC10_Subdoligranulum_unclassified","Disease Phenotype",-0.150854966519215
+"31","Eubacterium_rectale","PC5_Eubacterium_rectale",-0.279337713841375
+"32","PC5_Eubacterium_rectale","Disease Phenotype",0.297687133931251
+"33","Eubacterium_rectale","PC14_Eubacterium_rectale",0.130881501505069
+"34","PC14_Eubacterium_rectale","Disease Phenotype",0.145223047769164
+"35","Dorea_formicigenerans","PC5_Dorea_formicigenerans",-0.318603116304903
+"36","PC5_Dorea_formicigenerans","Disease Phenotype",0.297687133931251
+"37","Dorea_formicigenerans","PC10_Dorea_formicigenerans",-0.170928471027467
+"38","PC10_Dorea_formicigenerans","Disease Phenotype",-0.150854966519215
+"39","Dorea_formicigenerans","PC14_Dorea_formicigenerans",0.1838169550942
+"40","PC14_Dorea_formicigenerans","Disease Phenotype",0.145223047769164
+"41","Ruminococcus_lactaris","PC1_Ruminococcus_lactaris",0.303422895979963
+"42","PC1_Ruminococcus_lactaris","Disease Phenotype",-0.613476863844808
+"43","Anaerostipes_hadrus","PC5_Anaerostipes_hadrus",-0.131313010118838
+"44","PC5_Anaerostipes_hadrus","Disease Phenotype",0.297687133931251
+"45","Akkermansia_muciniphila","PC1_Akkermansia_muciniphila",0.528551088723316
+"46","PC1_Akkermansia_muciniphila","Disease Phenotype",-0.613476863844808
+"47","Roseburia_inulinivorans","PC5_Roseburia_inulinivorans",-0.299024789994316
+"48","PC5_Roseburia_inulinivorans","Disease Phenotype",0.297687133931251
+"49","Ruminococcus_obeum","PC1_Ruminococcus_obeum",0.351470373389878
+"50","PC1_Ruminococcus_obeum","Disease Phenotype",-0.613476863844808
+"51","Ruminococcus_obeum","PC4_Ruminococcus_obeum",0.180786007975245
+"52","PC4_Ruminococcus_obeum","Disease Phenotype",0.128327291519012
+"53","Ruminococcus_sp_5_1_39BFAA","PC3_Ruminococcus_sp_5_1_39BFAA",-0.250521952535121
+"54","PC3_Ruminococcus_sp_5_1_39BFAA","Disease Phenotype",0.285216456698996
+"55","Ruminococcus_sp_5_1_39BFAA","PC4_Ruminococcus_sp_5_1_39BFAA",0.177683922058118
+"56","PC4_Ruminococcus_sp_5_1_39BFAA","Disease Phenotype",0.128327291519012
+"57","Ruminococcus_sp_5_1_39BFAA","PC5_Ruminococcus_sp_5_1_39BFAA",-0.303118710966197
+"58","PC5_Ruminococcus_sp_5_1_39BFAA","Disease Phenotype",0.297687133931251
+"59","Bilophila_unclassified","PC3_Bilophila_unclassified",-0.152755650679862
+"60","PC3_Bilophila_unclassified","Disease Phenotype",0.285216456698996
+"61","Adlercreutzia_equolifaciens","PC1_Adlercreutzia_equolifaciens",0.449229049830454
+"62","PC1_Adlercreutzia_equolifaciens","Disease Phenotype",-0.613476863844808
+"63","Adlercreutzia_equolifaciens","PC4_Adlercreutzia_equolifaciens",0.261411992408878
+"64","PC4_Adlercreutzia_equolifaciens","Disease Phenotype",0.128327291519012
+"65","Roseburia_hominis","PC1_Roseburia_hominis",0.515398076173578
+"66","PC1_Roseburia_hominis","Disease Phenotype",-0.613476863844808
+"67","Bacteroides_cellulosilyticus","PC1_Bacteroides_cellulosilyticus",0.367578757360008
+"68","PC1_Bacteroides_cellulosilyticus","Disease Phenotype",-0.613476863844808
+"69","Barnesiella_intestinihominis","PC1_Barnesiella_intestinihominis",0.371960785322745
+"70","PC1_Barnesiella_intestinihominis","Disease Phenotype",-0.613476863844808
+"71","Barnesiella_intestinihominis","PC3_Barnesiella_intestinihominis",0.20590380943843
+"72","PC3_Barnesiella_intestinihominis","Disease Phenotype",0.285216456698996
+"73","Barnesiella_intestinihominis","PC4_Barnesiella_intestinihominis",-0.186836832199919
+"74","PC4_Barnesiella_intestinihominis","Disease Phenotype",0.128327291519012
+"75","Gordonibacter_pamelaeae","PC1_Gordonibacter_pamelaeae",0.323822753375469
+"76","PC1_Gordonibacter_pamelaeae","Disease Phenotype",-0.613476863844808
+"77","Gordonibacter_pamelaeae","PC4_Gordonibacter_pamelaeae",0.259461786322162
+"78","PC4_Gordonibacter_pamelaeae","Disease Phenotype",0.128327291519012
+"79","Bacteroidales_bacterium_ph8","PC1_Bacteroidales_bacterium_ph8",0.559300719053615
+"80","PC1_Bacteroidales_bacterium_ph8","Disease Phenotype",-0.613476863844808
+"81","Bacteroidales_bacterium_ph8","PC2_Bacteroidales_bacterium_ph8",0.00660477314254624
+"82","PC2_Bacteroidales_bacterium_ph8","Disease Phenotype",0.142809368304857
+"83","Bacteroidales_bacterium_ph8","PC3_Bacteroidales_bacterium_ph8",0.173457307903377
+"84","PC3_Bacteroidales_bacterium_ph8","Disease Phenotype",0.285216456698996
+"85","Bacteroidales_bacterium_ph8","PC43_Bacteroidales_bacterium_ph8",0.0730789717080074
+"86","PC43_Bacteroidales_bacterium_ph8","Disease Phenotype",0.208783273662594
+"87","Ruminococcus_torques","PC1_Ruminococcus_torques",0.341718388449662
+"88","PC1_Ruminococcus_torques","Disease Phenotype",-0.613476863844808
+"89","Ruminococcus_torques","PC3_Ruminococcus_torques",-0.308392099185906
+"90","PC3_Ruminococcus_torques","Disease Phenotype",0.285216456698996
+"91","Lachnospiraceae_bacterium_3_1_46FAA","PC1_Lachnospiraceae_bacterium_3_1_46FAA",0.390535085957584
+"92","PC1_Lachnospiraceae_bacterium_3_1_46FAA","Disease Phenotype",-0.613476863844808
+"93","Eubacterium_ramulus","PC5_Eubacterium_ramulus",-0.228501101077607
+"94","PC5_Eubacterium_ramulus","Disease Phenotype",0.297687133931251
+"95","Ruminococcus_bromii","PC1_Ruminococcus_bromii",0.495857526158703
+"96","PC1_Ruminococcus_bromii","Disease Phenotype",-0.613476863844808
+"97","Eubacterium_ventriosum","PC1_Eubacterium_ventriosum",0.4866280431046
+"98","PC1_Eubacterium_ventriosum","Disease Phenotype",-0.613476863844808
+"99","Eubacterium_ventriosum","PC14_Eubacterium_ventriosum",0.032329958494325
+"100","PC14_Eubacterium_ventriosum","Disease Phenotype",0.145223047769164
+"101","Clostridium_leptum","PC1_Clostridium_leptum",0.461302139188218
+"102","PC1_Clostridium_leptum","Disease Phenotype",-0.613476863844808
+"103","Ruminococcus_callidus","PC1_Ruminococcus_callidus",0.424510576743187
+"104","PC1_Ruminococcus_callidus","Disease Phenotype",-0.613476863844808
+"105","Alistipes_indistinctus","PC1_Alistipes_indistinctus",0.568740659907039
+"106","PC1_Alistipes_indistinctus","Disease Phenotype",-0.613476863844808
+"107","Flavonifractor_plautii","PC1_Flavonifractor_plautii",-0.20557046720424
+"108","PC1_Flavonifractor_plautii","Disease Phenotype",-0.613476863844808
+"109","Roseburia_unclassified","PC2_Roseburia_unclassified",-0.205884762123358
+"110","PC2_Roseburia_unclassified","Disease Phenotype",0.142809368304857
+"111","Roseburia_unclassified","PC3_Roseburia_unclassified",0.116888317551091
+"112","PC3_Roseburia_unclassified","Disease Phenotype",0.285216456698996
+"113","Alistipes_shahii","PC1_Alistipes_shahii",0.638912941699063
+"114","PC1_Alistipes_shahii","Disease Phenotype",-0.613476863844808
+"115","Alistipes_shahii","PC2_Alistipes_shahii",0.179589245672385
+"116","PC2_Alistipes_shahii","Disease Phenotype",0.142809368304857
+"117","Clostridium_symbiosum","PC1_Clostridium_symbiosum",-0.341510623983636
+"118","PC1_Clostridium_symbiosum","Disease Phenotype",-0.613476863844808
+"119","Alistipes_finegoldii","PC1_Alistipes_finegoldii",0.48712712068362
+"120","PC1_Alistipes_finegoldii","Disease Phenotype",-0.613476863844808
+"121","Alistipes_finegoldii","PC14_Alistipes_finegoldii",-0.111111413214576
+"122","PC14_Alistipes_finegoldii","Disease Phenotype",0.145223047769164
